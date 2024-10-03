@@ -87,4 +87,16 @@ public class Laptop extends Computer {
         System.out.printf("Weight: %d\n", this.get_weight());
     }
 
+    public Integer compute_arithmetic() {
+        Integer a = 1;
+        Integer b = 2;
+        Integer sum = a + b;
+        return sum;
+    }
+    
+    public Integer compute_arithmetic(Integer a, Integer b) {
+        Integer sum = a + b;
+        return sum;
+    }
+
 }

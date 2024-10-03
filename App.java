@@ -1,7 +1,22 @@
-package object;
+
 import java.util.*;
 
+import object.Computer;
+import object.Desktop;
+import object.Laptop;
+import vehicle.*;
+
 public class App {
+    public static void whatIsMyType(Object obj) {
+        if (obj instanceof Car) {
+            System.out.println("This is a car");
+        } else if (obj instanceof Truck) {
+            System.out.println("This is a truck");
+        } else {
+            System.out.println("This is an unknown vehicle");
+        }
+    }
+
     public static void main(String[] args) {
         Computer com = new Computer();
         com.set_cpu("50Hz 8 core");
@@ -46,5 +61,15 @@ public class App {
             System.out.println("Machine " + i + " : ");
             machines.get(i).display_spec();
         }
+
+        ArrayList<Vehicle> vehicles = new ArrayList<>();
+        vehicles.add(new Vehicle("1 Series", "BMW", 2013));
+        vehicles.add(new Car("100", "Audi", 1994, "Sedan", 5));
+        vehicles.add(new Truck("Chavdar M65", "Chavdar", 2000, 6000.00));
+
+        for (Vehicle v: vehicles) {
+            whatIsMyType(v);
+        }
+
     }
 }
